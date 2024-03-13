@@ -25,12 +25,19 @@ namespace ShopOnline.Web.Services
                 throw;
             }
         }
-          public async Task<IEnumerable<ProductDto>> GetItems1()
+        public async Task<IEnumerable<ProductDto>> GetItems1()
         {
            
                 var products = await this.httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("api/Product");
                 return products;
             
+        }
+        public async Task<IEnumerable<ProductDto>> GetItems2()
+        {
+
+            var products = await this.httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("api/Product");
+            return products;
+
         }
     }
 }
