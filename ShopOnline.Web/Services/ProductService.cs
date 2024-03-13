@@ -1,4 +1,5 @@
 ﻿using ShopOnline.Models.Dtos;
+using ShopOnline.Web.Pages;
 using ShopOnline.Web.Services.Contracts;
 using System.Net.Http.Json;
 
@@ -14,16 +15,17 @@ namespace ShopOnline.Web.Services
         }
         public async Task<IEnumerable<ProductDto>> GetItems()
         {
-            try
-            {
+           
                 var products = await this.httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("api/Product");
                 return products;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            
+        }
+        public async Task<IEnumerable<ProductDto>> GetItems2()
+        {
+           
+                var products = await this.httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("api/Product");
+                return products;
+            
         }
     }
 }
