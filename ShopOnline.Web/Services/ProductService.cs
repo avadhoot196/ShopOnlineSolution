@@ -27,5 +27,12 @@ namespace ShopOnline.Web.Services
                 return products;
             
         }
+          public async Task<IEnumerable<ProductDto>> GetItems1()
+        {
+           
+                var products = await this.httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("api/Product");
+                return products;
+            
+        }
     }
 }
